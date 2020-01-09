@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec81cbaf31c1b145b6f2623a73052e5, type: 3}
+  m_Name: JohnDoe
+  m_EditorClassIdentifier: 
+  witnessName: "Jo\xE3o Guio"
+  image: {fileID: 21300000, guid: d44afb067394b4849bf1a55d0ee85deb, type: 3}
+  age: 13
+  job: Aluno
+  introducingDialog: {fileID: 11400000, guid: 6da2ccaf4cdc7e648a328d7c7697e480, type: 2}
+  rumors:
+  - {fileID: 11400000, guid: 6f2376dc48550c549a8ab7c4303224dc, type: 2}
+  - {fileID: 11400000, guid: 6f7818a35b0697f4b92a26db9fa9f108, type: 2}
+  testimonys:
+  - {fileID: 11400000, guid: 6a33e7c41e74f1e49bd59283afee33a5, type: 2}
+  genericNegativeAnswers:
+  - ...
+  - "N\xE3o fa\xE7o a menor ideia"
+  - "N\xE3o estou reconhecendo"
+  - "N\xE3o penso em nada"

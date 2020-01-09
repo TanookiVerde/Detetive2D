@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec81cbaf31c1b145b6f2623a73052e5, type: 3}
+  m_Name: MaryJane
+  m_EditorClassIdentifier: 
+  witnessName: Mary Jane
+  image: {fileID: -8360621857648827146, guid: 7c0ef5261c2cb094a92b58429c14e484, type: 3}
+  age: 25
+  job: Professora
+  introducingDialog: {fileID: 11400000, guid: f99f5eafb939e824bb6ca9db87d8966f, type: 2}
+  rumors:
+  - {fileID: 11400000, guid: d7b5cfbb99d1b284d88f6e1401d8b9c9, type: 2}
+  testimonys:
+  - {fileID: 11400000, guid: 4d8991a9d0b9dfb4291cbad965767473, type: 2}
+  genericNegativeAnswers:
+  - "Como eu j\xE1 te disse, n\xE3o sei o que \xE9 isso."
+  - Talvez seja melhor perguntar para outra pessoa
+  - Foi mal...

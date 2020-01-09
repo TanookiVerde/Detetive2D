@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ac05752695f5040b0f37df994866c2, type: 3}
+  m_Name: Plank_Ball_Dialog
+  m_EditorClassIdentifier: 
+  txts:
+  - "MARTHA: N\xE3o seria coincid\xEAncia um rabisco com giz, comum em escolas e
+    uma bola de futebol, brincadeira de crian\xE7a..."
+  - O tal Jonny deve ter feito isso.

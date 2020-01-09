@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f8e04fc4b492f49a8e82c6be7c29ad, type: 3}
+  m_Name: Mary_Plank
+  m_EditorClassIdentifier: 
+  witness: {fileID: 11400000, guid: 380965503b6bf944791e40d2b76f1ed3, type: 2}
+  clue: {fileID: 11400000, guid: d67acea19a396a3439776fae5ff08eb4, type: 2}
+  description: "Mary disse que foi Jo\xE3o tem um amigo imagin\xE1rio e que diz que
+    o mesmo que rabiscou isso."
+  findingDialog: {fileID: 11400000, guid: b749e906e21cb3f429ac1f39211c677c, type: 2}
