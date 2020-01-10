@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        if(!GlobalFlags.dialog)
+        if(!GlobalFlags.dialog && !GlobalFlags.onInvestigationSpot && !GlobalFlags.filesMenuOpened)
             Move();
         else
             animator.SetBool("walking", false);

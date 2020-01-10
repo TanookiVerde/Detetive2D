@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Files
 {
-    public const string SAVE_NAME = "game_save_12";
+    public const string SAVE_NAME = "game_save_15";
 
     [SerializeField] public List<int> clues = new List<int>();
     [SerializeField] public List<int> insights = new List<int>();

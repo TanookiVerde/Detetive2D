@@ -20,6 +20,8 @@ public class FilesMenu : MonoBehaviour
 
     private void Update()
     {
+        if (GlobalFlags.onInvestigationSpot)
+            return;
         if (!opened && Input.GetKeyDown(KeyCode.Escape))
             Open();
         else if (opened && Input.GetKeyDown(KeyCode.Escape))

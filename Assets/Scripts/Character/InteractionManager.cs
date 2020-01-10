@@ -12,10 +12,11 @@ public class InteractionManager : MonoBehaviour
     public DialogSensor dialogSensor;
     public ClueSensor clueSensor;
     public PortalSensor portalSensor;
+    public InvestigationSpotSensor spotSensor;
 
     private void Update()
     {
-        if (GlobalFlags.dialog || GlobalFlags.filesMenuOpened)
+        if (GlobalFlags.dialog || GlobalFlags.filesMenuOpened || GlobalFlags.onInvestigationSpot)
             return;
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -36,6 +37,10 @@ public class InteractionManager : MonoBehaviour
             }else if(portalSensor.collidingPortal.Count > 0)
             {
                 portalSensor.EnterPortal();
+            }
+            else if (spotSensor.collidingSpots.Count > 0)
+            {
+                spotSensor.OpenInvestigationSpot();
             }
         }
     }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6686caa331dd8454d8b229c59c711794, type: 3}
+  m_Name: Papel
+  m_EditorClassIdentifier: 
+  img: {fileID: -4382161304815688263, guid: 4f210f81e214dcc4893f05dd1cd953ab, type: 3}
+  clueName: Papel
+  clueDescription: Um papel escrito "Comi teu cu"
+  important: 1
+  findingDialog: {fileID: 11400000, guid: eb680648942c4d942bc659c248231146, type: 2}

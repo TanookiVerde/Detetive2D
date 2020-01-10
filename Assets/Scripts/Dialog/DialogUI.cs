@@ -11,25 +11,31 @@ public class DialogUI : MonoBehaviour
 
     public static void StartDialog(DialogData data, bool addedOnFiles = false, DialogType type = DialogType.NONE)
     {
+        if (GlobalFlags.dialog) return;
         var dialog = FindObjectOfType<DialogUI>();
         dialog.GetComponent<CanvasGroup>().alpha = 1;
         dialog.StartCoroutine(dialog.DialogScript(data.txts, addedOnFiles, type));
     }
     public static void StartDialog(List<string> speech)
     {
+        if (GlobalFlags.dialog) return;
         var dialog = FindObjectOfType<DialogUI>();
         dialog.GetComponent<CanvasGroup>().alpha = 1;
         dialog.StartCoroutine(dialog.DialogScript(speech, false, DialogType.NONE));
     }
     private IEnumerator DialogScript(List<string> speech, bool addedOnFiles, DialogType type)
     {
+        print("BEGIN DIALOG");
         GlobalFlags.dialog = true;
-        transform.parent.GetComponent<CanvasGroup>().interactable = false;
+        transform.parent.GetComponent<CanvasGroup>().interactable = false; //desativa todos os canvas de interacao
         List<string> txts = new List<string>(speech);
         continueIcon.enabled = false;
 
         if ((type != DialogType.NONE) && addedOnFiles)
             txts.Add(GetText(type));
+        dialogContent.text = "";
+
+        yield return null;
 
         var dialog = FindObjectOfType<DialogUI>();
         for(int i = 0; i < txts.Count; i++)
@@ -44,6 +50,7 @@ public class DialogUI : MonoBehaviour
             continueIcon.enabled = false;
         }
         dialog.GetComponent<CanvasGroup>().alpha = 0;
+        print("END OF DIALOG");
         GlobalFlags.dialog = false;
         transform.parent.GetComponent<CanvasGroup>().interactable = true;
     }

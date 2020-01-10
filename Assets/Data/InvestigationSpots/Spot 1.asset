@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34b831e201df760419aeeee42ceb401e, type: 3}
+  m_Name: Spot 1
+  m_EditorClassIdentifier: 
+  background: {fileID: 21300000, guid: c8fec7db39bc02a478b294359ff0046c, type: 3}
+  clues:
+  - position: {x: 0, y: 0}
+    clue: {fileID: 11400000, guid: d1ec26095a75f254d982edfb52c40d58, type: 2}
+    colliderSize: 0.1
+  - position: {x: 0.2, y: 0.1}
+    clue: {fileID: 11400000, guid: c084d14ff50ff904baef8d12c322f6b1, type: 2}
+    colliderSize: 0.1
+  - position: {x: -0.3, y: 0}
+    clue: {fileID: 11400000, guid: d09417dbd61a70645b130d2b80fb0e88, type: 2}
+    colliderSize: 0.1
+  - position: {x: 0.3, y: -0.1}
+    clue: {fileID: 11400000, guid: 84d1ce59141ffab4eb5d438a752244aa, type: 2}
+    colliderSize: 0.1

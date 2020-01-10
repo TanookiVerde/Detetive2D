@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 761008415669428916}
   - component: {fileID: 3216592325956528009}
   - component: {fileID: 6507145902490872148}
+  - component: {fileID: 186194099071032400}
   - component: {fileID: 7508079161092508423}
   m_Layer: 0
   m_Name: Martha
@@ -211,6 +212,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collidingPortal: []
+--- !u!114 &186194099071032400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4236042647631841838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946fc19ca3a164b4fb57ac7ddae138d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collidingSpots: []
 --- !u!114 &7508079161092508423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,3 +242,4 @@ MonoBehaviour:
   dialogSensor: {fileID: 761008415669428916}
   clueSensor: {fileID: 1918854238377261313}
   portalSensor: {fileID: 6507145902490872148}
+  spotSensor: {fileID: 186194099071032400}
