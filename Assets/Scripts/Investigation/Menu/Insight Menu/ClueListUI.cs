@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class ClueListUI : MonoBehaviour
 {
-    [SerializeField] private Storage storage;
-
     [SerializeField] private Transform root;
     [SerializeField] private GameObject cluePrefab;
 
@@ -21,7 +19,8 @@ public class ClueListUI : MonoBehaviour
     }
     public void Close()
     {
-        if(caller!=null)caller.GetComponent<Button>().Select();
+        if(caller!=null)
+            caller.GetComponent<Button>().Select();
         caller = null;
         var cg = GetComponent<CanvasGroup>();
         cg.alpha = 0;
@@ -30,6 +29,8 @@ public class ClueListUI : MonoBehaviour
     }
     public void ListAllCollectedClues(ClueSpaceUI caller)
     {
+        CaseData openedCase = InvestigationManager.GetCase();
+
         Open();
         Erase();
         Files files = Files.Load();
@@ -38,7 +39,7 @@ public class ClueListUI : MonoBehaviour
         for(int i = 0; i < l.Count;i++)
         {
             var clue = l[i];
-            ClueData cd = storage.GetClueData(clue);
+            ClueData cd = openedCase.GetClueData(clue);
             var go = Instantiate(cluePrefab, root);
             go.GetComponent<ClueForListUI>().SetInfo(cd);
             go.GetComponent<Button>().onClick.AddListener(

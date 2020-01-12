@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class SelectionUI : MonoBehaviour
 {
-    [SerializeField] private Storage storage;
-
     [SerializeField] private TMP_Text header;
     [SerializeField] private TMP_Text objName;
     [SerializeField] private Image objIcon;
@@ -18,7 +16,7 @@ public class SelectionUI : MonoBehaviour
     }
     private void Update()
     {
-        if (GlobalFlags.filesMenuOpened == true)
+        if (GlobalFlags.menuOpened == true)
             return;
         if (Input.GetKeyDown(KeyCode.Tab))
         {
@@ -36,19 +34,21 @@ public class SelectionUI : MonoBehaviour
     }
     public void UpdateSelection()
     {
+        CaseData openedCase = InvestigationManager.GetCase();
+
         if (InteractionManager.selection.type == SelectionType.CLUE)
         {
             transform.GetChild(1).GetComponent<CanvasGroup>().alpha = 1;
             header.text = "PISTA";
-            objName.text = storage.clues[InteractionManager.selection.clue].clueName;
-            objIcon.sprite = storage.clues[InteractionManager.selection.clue].img;
+            objName.text = openedCase.clues[InteractionManager.selection.clue].clueName;
+            objIcon.sprite = openedCase.clues[InteractionManager.selection.clue].img;
         }
         else if (InteractionManager.selection.type == SelectionType.WITNESS)
         {
             transform.GetChild(1).GetComponent<CanvasGroup>().alpha = 1;
             header.text = "TESTEMUNHA";
-            objName.text = storage.witnesses[InteractionManager.selection.witness].witnessName;
-            objIcon.sprite = storage.witnesses[InteractionManager.selection.witness].image;
+            objName.text = openedCase.witnesses[InteractionManager.selection.witness].witnessName;
+            objIcon.sprite = openedCase.witnesses[InteractionManager.selection.witness].image;
         }
         else if (InteractionManager.selection.type == SelectionType.NONE)
         {

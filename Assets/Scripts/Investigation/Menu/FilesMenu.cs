@@ -4,45 +4,40 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 
-public class FilesMenu : MonoBehaviour
+public class FilesMenu : MenuBehaviour
 {
-    public Storage storage;
-
     private const string MENU_BASE_NAME = "ARQUIVOS";
 
     [SerializeField] private TMP_Text header;
-
     [SerializeField] private List<FilesMenuScreen> screens;
-    [SerializeField] private int selectedScreen = 0;
+
+    private int selectedScreen = 0;
+    private Coroutine changeName;
+    private Coroutine loop;
+
     public bool opened;
 
-    [SerializeField] private CanvasGroup canvasGroup;
-
-    private void Update()
+    public void Start()
     {
-        if (GlobalFlags.onInvestigationSpot)
-            return;
-        if (!opened && Input.GetKeyDown(KeyCode.Escape))
-            Open();
-        else if (opened && Input.GetKeyDown(KeyCode.Escape))
-            Close();
-        if (Input.GetKeyDown(KeyCode.Q))
-            NextScreen(-1);
-        if (Input.GetKeyDown(KeyCode.E))
-            NextScreen(+1);
-    }
-    public void Open()
-    {
-        GlobalFlags.filesMenuOpened = true;
-        opened = true;
-        header.text = "";
-        selectedScreen = 0;
-        canvasGroup.DOFade(1, 0);
-        canvasGroup.blocksRaycasts = true;
-        canvasGroup.interactable = true;
         foreach (var s in screens)
             s.Hide(1, 0);
-        screens[selectedScreen].Show(1,0);
+    }
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !opened)
+            Open();
+        else if (Input.GetKeyDown(KeyCode.Escape) && opened && canvasGroup.interactable)
+            Close();
+    }
+    public override void OnOpen()
+    {
+        opened = true;
+        header.text = "";
+        selectedScreen = 1;
+        foreach (var s in screens)
+            s.Hide(1, 0);
+        screens[selectedScreen].Show(1, 0);
+        loop = StartCoroutine(Loop());
     }
     public void NextScreen(int direction)
     {
@@ -53,17 +48,16 @@ public class FilesMenu : MonoBehaviour
         selectedScreen = index;
         screens[selectedScreen].Show(-direction);
     }
-    public void Close()
+    public override void OnClose()
     {
-        GlobalFlags.filesMenuOpened = false;
         opened = false;
-        canvasGroup.DOFade(0, 0);
-        canvasGroup.blocksRaycasts = false;
-        canvasGroup.interactable = false;
+        StopCoroutine(loop);
     }
     public void SetName(string name)
     {
-        StartCoroutine(ChangeNameAnimation(name));
+        if (changeName != null)
+            StopCoroutine(changeName);
+        changeName = StartCoroutine(ChangeNameAnimation(name));
     }
     private IEnumerator ChangeNameAnimation(string name)
     {
@@ -72,6 +66,21 @@ public class FilesMenu : MonoBehaviour
         {
             header.text = (MENU_BASE_NAME + name).Substring(0, header.text.Length + 1);
             yield return new WaitForSeconds(0.025f);
+        }
+    }
+    private IEnumerator Loop()
+    {
+        yield return null;
+        while (true)
+        {
+            if (canvasGroup.interactable)
+            {
+                if (Input.GetKeyDown(KeyCode.Q))
+                    NextScreen(-1);
+                if (Input.GetKeyDown(KeyCode.E))
+                    NextScreen(+1);
+            }
+            yield return null;
         }
     }
 }

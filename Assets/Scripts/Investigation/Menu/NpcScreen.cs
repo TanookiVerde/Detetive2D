@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class NpcScreen : FilesMenuScreen
 {
-    [SerializeField] private Storage storage;
     [SerializeField] private Transform contentRoot;
     [SerializeField] private GameObject witnessPrefab;
 
     public string screenName;
     public override void OnShow()
     {
+        CaseData openedCase = InvestigationManager.GetCase();
+
         FindObjectOfType<WitnessInfoUI>().Hide();
         FindObjectOfType<FilesMenu>().SetName(": " + screenName);
         Erase();
@@ -20,7 +21,7 @@ public class NpcScreen : FilesMenuScreen
         for (int i = 0; i < files.witnesses.Count; i++)
         {
             var go = Instantiate(witnessPrefab, contentRoot);
-            go.GetComponent<WitnessUI>().SetInfo(storage.witnesses[files.witnesses[i]]);
+            go.GetComponent<WitnessUI>().SetInfo(openedCase.witnesses[files.witnesses[i]]);
             if (i == 0)
                 go.GetComponent<Selectable>().Select();
         }

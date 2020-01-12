@@ -6,7 +6,9 @@ public class GlobalFlags : MonoBehaviour
 {
     public static bool dialog;
     public static bool clue;
-    public static bool filesMenuOpened;
     public static bool travel;
+
+    public static bool menuOpened;
     public static bool onInvestigationSpot;
+    public static bool onReportCreator;
 }

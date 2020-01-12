@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Custom/Storage")]
 public class Storage : ScriptableObject
 {
+    public List<CaseData> cases;
+
+    //Temp
     public List<ClueData> clues;
     public List<WitnessData> witnesses;
     public List<InsightData> insights;

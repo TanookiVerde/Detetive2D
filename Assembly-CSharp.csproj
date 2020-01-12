@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{803D81D6-585C-0A70-9949-91B7EF9CF2DE}</ProjectGuid>
+    <ProjectGuid>{9DDFBF9E-1341-3505-AD8B-7D2244DDC676}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -87,11 +87,14 @@
     <Compile Include="Assets\Scripts\Dialog\DialogSpot.cs" />
     <Compile Include="Assets\Scripts\Dialog\DialogUI.cs" />
     <Compile Include="Assets\Scripts\GlobalFlags.cs" />
+    <Compile Include="Assets\Scripts\Investigation\CaseData.cs" />
     <Compile Include="Assets\Scripts\Investigation\Clue.cs" />
     <Compile Include="Assets\Scripts\Investigation\ClueData.cs" />
     <Compile Include="Assets\Scripts\Investigation\ClueTextUI.cs" />
     <Compile Include="Assets\Scripts\Investigation\InsightData.cs" />
     <Compile Include="Assets\Scripts\Investigation\InvestigateVerbUI.cs" />
+    <Compile Include="Assets\Scripts\Investigation\InvestigationManager.cs" />
+    <Compile Include="Assets\Scripts\Investigation\Menu\CaseInfoScreen.cs" />
     <Compile Include="Assets\Scripts\Investigation\Menu\ClueFilesMenu.cs" />
     <Compile Include="Assets\Scripts\Investigation\Menu\CluesScreen.cs" />
     <Compile Include="Assets\Scripts\Investigation\Menu\FilesMenu.cs" />
@@ -105,6 +108,16 @@
     <Compile Include="Assets\Scripts\Investigation\Menu\SelectionUI.cs" />
     <Compile Include="Assets\Scripts\Investigation\Menu\WitnessInfoUI.cs" />
     <Compile Include="Assets\Scripts\Investigation\Menu\WitnessUI.cs" />
+    <Compile Include="Assets\Scripts\Investigation\Report Creator\Historic\HistoricAnswer.cs" />
+    <Compile Include="Assets\Scripts\Investigation\Report Creator\Historic\HistoricReportCreator.cs" />
+    <Compile Include="Assets\Scripts\Investigation\Report Creator\Object Picker\ListedObject.cs" />
+    <Compile Include="Assets\Scripts\Investigation\Report Creator\Object Picker\ObjectLister.cs" />
+    <Compile Include="Assets\Scripts\Investigation\Report Creator\Object Picker\ObjectPicker.cs" />
+    <Compile Include="Assets\Scripts\Investigation\Report Creator\QuestionScreenReportCreator.cs" />
+    <Compile Include="Assets\Scripts\Investigation\Report Creator\ReportCreator.cs" />
+    <Compile Include="Assets\Scripts\Investigation\Report Creator\ReportCreatorScreen.cs" />
+    <Compile Include="Assets\Scripts\Investigation\Report Creator\StartScreenReportCreator.cs" />
+    <Compile Include="Assets\Scripts\Investigation\ReportData.cs" />
     <Compile Include="Assets\Scripts\Investigation\RumorData.cs" />
     <Compile Include="Assets\Scripts\Investigation\Spot\InvestigationSpot.cs" />
     <Compile Include="Assets\Scripts\Investigation\Spot\InvestigationSpotData.cs" />
@@ -112,6 +125,7 @@
     <Compile Include="Assets\Scripts\Investigation\TestimonyData.cs" />
     <Compile Include="Assets\Scripts\Investigation\WitnessData.cs" />
     <Compile Include="Assets\Scripts\Storage.cs" />
+    <Compile Include="Assets\Scripts\System\MenuBehaviour.cs" />
     <Compile Include="Assets\Scripts\VerbUI.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -133,37 +147,37 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/pedro/Projetos/PlatformGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/pedro/Documents/GitHub/ProjetoDetetive/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/pedro/Projetos/PlatformGame/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/pedro/Documents/GitHub/ProjetoDetetive/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/pedro/Projetos/PlatformGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/pedro/Documents/GitHub/ProjetoDetetive/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/pedro/Projetos/PlatformGame/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/pedro/Documents/GitHub/ProjetoDetetive/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/pedro/Projetos/PlatformGame/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/pedro/Documents/GitHub/ProjetoDetetive/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/pedro/Projetos/PlatformGame/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/pedro/Documents/GitHub/ProjetoDetetive/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/pedro/Projetos/PlatformGame/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/pedro/Documents/GitHub/ProjetoDetetive/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/pedro/Projetos/PlatformGame/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/pedro/Documents/GitHub/ProjetoDetetive/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/pedro/Projetos/PlatformGame/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/pedro/Documents/GitHub/ProjetoDetetive/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/pedro/Projetos/PlatformGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/pedro/Documents/GitHub/ProjetoDetetive/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/pedro/Projetos/PlatformGame/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/pedro/Documents/GitHub/ProjetoDetetive/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -343,7 +357,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>C:/Users/pedro/Projetos/PlatformGame/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>C:/Users/pedro/Documents/GitHub/ProjetoDetetive/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

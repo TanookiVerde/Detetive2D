@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class InsightScreen : FilesMenuScreen
 {
-    public Storage storage;
     public string screenName;
     public ClueListUI clueList;
 
@@ -27,14 +26,16 @@ public class InsightScreen : FilesMenuScreen
     }
     public void Relate()
     {
+        CaseData openedCase = InvestigationManager.GetCase();
+
         var clue1 = firstSpace.selectedClue;
         var clue2 = secondSpace.selectedClue;
-        foreach(InsightData i in storage.insights)
+        foreach(InsightData i in openedCase.insights)
         {
             if((i.firstClue == clue1 && i.secondClue == clue2) 
                 || (i.firstClue == clue2 && i.secondClue == clue1))
             {
-                int insightIndex = storage.GetInsightIndexFromData(i);
+                int insightIndex = openedCase.GetInsightIndexFromData(i);
                 Files file = Files.Load();
                 bool added = file.AddInsight(insightIndex);
                 file.Save();

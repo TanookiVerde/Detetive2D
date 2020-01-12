@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class CluesScreen : FilesMenuScreen
 {
-    [SerializeField] private Storage storage;
     [SerializeField] private Transform contentRoot;
     [SerializeField] private GameObject cluePrefab;
 
     public string screenName;
     public override void OnShow()
     {
+        CaseData openedCase = InvestigationManager.GetCase();
+
         base.OnShow();
         FindObjectOfType<FilesMenu>().SetName(": " + screenName);
         FindObjectOfType<ObjectInfoUI>().Hide();
@@ -21,7 +22,7 @@ public class CluesScreen : FilesMenuScreen
         for(int i = 0; i < files.clues.Count; i++)
         {
             var go = Instantiate(cluePrefab, contentRoot);
-            go.GetComponent<ClueFilesMenu>().SetInfo(storage.clues[files.clues[i]]);
+            go.GetComponent<ClueFilesMenu>().SetInfo(openedCase.clues[files.clues[i]]);
             if (i == 0)
                 go.GetComponent<Selectable>().Select();
         }

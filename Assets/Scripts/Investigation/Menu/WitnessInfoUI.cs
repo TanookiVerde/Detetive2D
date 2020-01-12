@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class WitnessInfoUI : MonoBehaviour
 {
-    [SerializeField] private Storage storage;
-
     [SerializeField] private TMP_Text title;
     [SerializeField] private TMP_Text description;
     [SerializeField] private Image icon;
@@ -18,6 +16,8 @@ public class WitnessInfoUI : MonoBehaviour
     }
     public void SetObject(WitnessData witness)
     {
+        CaseData openedCase = InvestigationManager.GetCase();
+
         GetComponent<CanvasGroup>().alpha = 1;
         string fullDescription = "";
         fullDescription += "IDADE: " + witness.age + "\n";
@@ -25,12 +25,12 @@ public class WitnessInfoUI : MonoBehaviour
         fullDescription += "RUMORES:";
         Files files = Files.Load();
 
-        int witnessIndex = storage.GetWitnessIndexFromData(witness);
+        int witnessIndex = openedCase.GetWitnessIndexFromData(witness);
         foreach (Rumor r in files.rumors)
         {
             if (r.target == witnessIndex)
             {
-                RumorData rd = storage.GetRumorData(r);
+                RumorData rd = openedCase.GetRumorData(r);
                 print(r.from + "/" + r.target) ;
                 fullDescription += "\n" + "* " + rd.from.witnessName + ": " + rd.description;
             }

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31605fddf3c330d469bb281deec11d8a, type: 3}
+  m_Name: Case-1
+  m_EditorClassIdentifier: 
+  title: Primeiro Caso
+  description: "Descri\xE7\xE3o"
+  location: Vila da Montanha
+  initialClues:
+  - {fileID: 11400000, guid: 55016fe49d7d5e04885465dbc38c3dbb, type: 2}
+  witnesses:
+  - {fileID: 11400000, guid: 801b76737bdae5147bb78077077ec433, type: 2}
+  - {fileID: 11400000, guid: 380965503b6bf944791e40d2b76f1ed3, type: 2}
+  insights:
+  - {fileID: 11400000, guid: 730341c55ef361b43a84064399886b16, type: 2}
+  clues:
+  - {fileID: 11400000, guid: d1ec26095a75f254d982edfb52c40d58, type: 2}
+  - {fileID: 11400000, guid: c084d14ff50ff904baef8d12c322f6b1, type: 2}
+  - {fileID: 11400000, guid: 84d1ce59141ffab4eb5d438a752244aa, type: 2}
+  - {fileID: 11400000, guid: d09417dbd61a70645b130d2b80fb0e88, type: 2}
+  - {fileID: 11400000, guid: d67acea19a396a3439776fae5ff08eb4, type: 2}
+  - {fileID: 11400000, guid: 55016fe49d7d5e04885465dbc38c3dbb, type: 2}
+  report: {fileID: 11400000, guid: 177294e046e9b5849a26cd772d5c56ff, type: 2}

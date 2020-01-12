@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ed999ee0cfc2540ae1723322d0dcc9, type: 3}
   m_Name: Storage
   m_EditorClassIdentifier: 
+  cases:
+  - {fileID: 11400000, guid: 91f8416228a50fa49a76a163346f2493, type: 2}
   clues:
   - {fileID: 11400000, guid: d1ec26095a75f254d982edfb52c40d58, type: 2}
   - {fileID: 11400000, guid: d67acea19a396a3439776fae5ff08eb4, type: 2}

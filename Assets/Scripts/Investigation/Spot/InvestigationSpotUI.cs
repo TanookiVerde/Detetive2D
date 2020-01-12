@@ -6,8 +6,6 @@ using DG.Tweening;
 
 public class InvestigationSpotUI : MonoBehaviour
 {
-    [SerializeField] private Storage storage;
-
     [SerializeField] private CanvasGroup group;
     [SerializeField] private Image background;
     [SerializeField] private InvestigationSpotData spotData;
@@ -55,7 +53,6 @@ public class InvestigationSpotUI : MonoBehaviour
     }
     public void Investigate(Vector2 normalizedPosition)
     {
-        print("Investigate at " + normalizedPosition);
         foreach (var s in spotData.clues)
         {
             if((normalizedPosition - s.position).magnitude <= s.colliderSize)
@@ -69,15 +66,14 @@ public class InvestigationSpotUI : MonoBehaviour
     }
     private void FoundClue(ClueData clue)
     {
-        print("FOUND");
+        CaseData openedCase = InvestigationManager.GetCase();
         Files files = Files.Load();
-        bool added = files.AddClue(storage.GetClueIndexFromData(clue));
+        bool added = files.AddClue(openedCase.GetClueIndexFromData(clue));
         files.Save();
         DialogUI.StartDialog(clue.findingDialog, added, DialogType.CLUE);
     }
     private void NoClueFound()
     {
-        print("NOT FOUND");
         var speech = new List<string>();
         speech.Add("MARTHA: Não tem nada suspeito nisso.");
         DialogUI.StartDialog(speech);

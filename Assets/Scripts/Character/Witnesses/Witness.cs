@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Witness : MonoBehaviour
 {
-    [SerializeField] private Storage storage;
     [SerializeField] private WitnessData data;
 
     public void Ask(ClueData clue)
     {
-        foreach(var testimony in data.testimonys)
+        CaseData openedCase = InvestigationManager.GetCase();
+
+        foreach (var testimony in data.testimonys)
         {
             if(testimony.clue == clue)
             {
                 Files files = Files.Load();
-                bool added = files.AddTestimony(storage.GetTestimonyFromData(testimony));
+                bool added = files.AddTestimony(openedCase.GetTestimonyFromData(testimony));
                 files.Save();
                 DialogUI.StartDialog(testimony.findingDialog, added, DialogType.TESTIMONY);
                 return;
@@ -26,12 +27,14 @@ public class Witness : MonoBehaviour
     }
     public void Ask(WitnessData witness)
     {
+        CaseData openedCase = InvestigationManager.GetCase();
+
         foreach (var rumor in data.rumors)
         {
             if (rumor.target == witness)
             {
                 Files files = Files.Load();
-                bool added = files.AddRumor(storage.GetRumorFromData(rumor));
+                bool added = files.AddRumor(openedCase.GetRumorFromData(rumor));
                 files.Save();
                 DialogUI.StartDialog(rumor.findingDialog, added, DialogType.RUMOR);
                 return;
@@ -43,8 +46,10 @@ public class Witness : MonoBehaviour
     }
     public void Introduce()
     {
+        CaseData openedCase = InvestigationManager.GetCase();
+
         Files files = Files.Load();
-        bool added = files.AddWitness(storage.GetWitnessIndexFromData(data));
+        bool added = files.AddWitness(openedCase.GetWitnessIndexFromData(data));
         files.Save();
         DialogUI.StartDialog(data.introducingDialog, added, DialogType.WITNESS);
     }

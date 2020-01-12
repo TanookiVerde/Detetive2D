@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class InteractionManager : MonoBehaviour
 {
-    public Storage storage;
-
     public static Selection selection = new Selection();
 
     public WitnessSensor witnessSensor;
@@ -16,7 +14,9 @@ public class InteractionManager : MonoBehaviour
 
     private void Update()
     {
-        if (GlobalFlags.dialog || GlobalFlags.filesMenuOpened || GlobalFlags.onInvestigationSpot)
+        CaseData openedCase = InvestigationManager.GetCase();
+        
+        if (GlobalFlags.dialog || GlobalFlags.menuOpened || GlobalFlags.onInvestigationSpot)
             return;
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -27,21 +27,16 @@ public class InteractionManager : MonoBehaviour
             else if (witnessSensor.collidingWitness.Count > 0)
             {
                 if (selection.type == SelectionType.CLUE)
-                    witnessSensor.AskWitness(storage.clues[selection.clue]);
+                    witnessSensor.AskWitness(openedCase.clues[selection.clue]);
                 else if (selection.type == SelectionType.WITNESS)
-                    witnessSensor.AskWitness(storage.witnesses[selection.witness]);
+                    witnessSensor.AskWitness(openedCase.witnesses[selection.witness]);
                 else if (selection.type == SelectionType.NONE)
-                {
                     witnessSensor.IntroduceToWitness();
-                }
-            }else if(portalSensor.collidingPortal.Count > 0)
-            {
+            }
+            else if(portalSensor.collidingPortal.Count > 0)
                 portalSensor.EnterPortal();
-            }
             else if (spotSensor.collidingSpots.Count > 0)
-            {
                 spotSensor.OpenInvestigationSpot();
-            }
         }
     }
 }
