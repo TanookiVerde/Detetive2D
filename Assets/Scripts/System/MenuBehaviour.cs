@@ -46,13 +46,13 @@ public class MenuBehaviour : MonoBehaviour
             m.SetInteractive(false);
         }
         menuHierarchy.Add(menu);
-        GlobalFlags.menuOpened = menuHierarchy.Count == 0;
+        GlobalFlags.menuOpened = menuHierarchy.Count > 0;
     }
     public static void Remove(MenuBehaviour menu)
     {
         menuHierarchy.Remove(menu);
         if(menuHierarchy.Count > 0)
             menuHierarchy[menuHierarchy.Count - 1].SetInteractive(true);
-        GlobalFlags.menuOpened = menuHierarchy.Count == 0;
+        GlobalFlags.menuOpened = menuHierarchy.Count > 0;
     }
 }

@@ -19,4 +19,10 @@ MonoBehaviour:
   - question: Tenho algo provando que ele estava no local do crime?
     possibleAnswers:
     - {fileID: 11400000, guid: d1ec26095a75f254d982edfb52c40d58, type: 2}
+  - question: "Qual a motiva\xE7\xE3o do crime?"
+    possibleAnswers:
+    - {fileID: 11400000, guid: d67acea19a396a3439776fae5ff08eb4, type: 2}
+  - question: "Algu\xE9m ajudou no processo?"
+    possibleAnswers:
+    - {fileID: 11400000, guid: 380965503b6bf944791e40d2b76f1ed3, type: 2}
   maxFailures: 3

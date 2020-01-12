@@ -23,6 +23,7 @@ public class HistoricReportCreator : MonoBehaviour
     }
     public void AddAnswer(int questionIndex, ScriptableObject answer, DataType type)
     {
+        print(answersUI.Count + "/" + questionIndex);
         var go = Instantiate(qAPrefab, root).GetComponent<HistoricAnswer>();
         var question = data.questions[questionIndex];
         switch (type)
@@ -43,13 +44,18 @@ public class HistoricReportCreator : MonoBehaviour
                 go.SetInfo(question.question, ((InsightData)answer));
                 break;
         }
-        if (answersUI.Count > questionIndex)
+        if (questionIndex < answersUI.Count)
         {
             Destroy(answersUI[questionIndex].gameObject);
             answersUI[questionIndex] = go.transform;
             go.transform.SetSiblingIndex(questionIndex);
+            answers[questionIndex] = answer;
         }
-        answers.Add(answer);
+        else
+        {
+            answersUI.Add(go.transform);
+            answers.Add(answer);
+        }
     }
     public void RemoveAnswer()
     {

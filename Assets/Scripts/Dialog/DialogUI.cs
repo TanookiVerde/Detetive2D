@@ -25,7 +25,6 @@ public class DialogUI : MonoBehaviour
     }
     private IEnumerator DialogScript(List<string> speech, bool addedOnFiles, DialogType type)
     {
-        print("BEGIN DIALOG");
         GlobalFlags.dialog = true;
         transform.parent.GetComponent<CanvasGroup>().interactable = false; //desativa todos os canvas de interacao
         List<string> txts = new List<string>(speech);
@@ -50,7 +49,6 @@ public class DialogUI : MonoBehaviour
             continueIcon.enabled = false;
         }
         dialog.GetComponent<CanvasGroup>().alpha = 0;
-        print("END OF DIALOG");
         GlobalFlags.dialog = false;
         transform.parent.GetComponent<CanvasGroup>().interactable = true;
     }

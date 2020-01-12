@@ -6,6 +6,14 @@ using UnityEngine.UI;
 
 public class ObjectPicker : MonoBehaviour
 {
+    [Header("Allow objects of type")]
+    public bool clues;
+    public bool testimonys;
+    public bool rumors;
+    public bool witnesses;
+    public bool insights;
+
+    [Space(10)]
     public TMP_Text title;
     public ObjectLister lister;
 
@@ -14,6 +22,7 @@ public class ObjectPicker : MonoBehaviour
 
     public void OpenLister()
     {
+        lister.SetAllowedObjects(GetAllowedObjects());
         lister.Open();
         lister.choiceEvent += SetObject;
     }
@@ -35,5 +44,15 @@ public class ObjectPicker : MonoBehaviour
     public DataType GetSelectedType()
     {
         return type;
+    }
+    private bool[] GetAllowedObjects()
+    {
+        var b = new bool[5];
+        b[0] = clues;
+        b[1] = witnesses;
+        b[2] = testimonys;
+        b[3] = rumors;
+        b[4] = insights;
+        return b;
     }
 }

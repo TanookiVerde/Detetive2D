@@ -108,6 +108,7 @@
     <Compile Include="Assets\Scripts\Investigation\Menu\SelectionUI.cs" />
     <Compile Include="Assets\Scripts\Investigation\Menu\WitnessInfoUI.cs" />
     <Compile Include="Assets\Scripts\Investigation\Menu\WitnessUI.cs" />
+    <Compile Include="Assets\Scripts\Investigation\Report Creator\EndingScreenReportCreator.cs" />
     <Compile Include="Assets\Scripts\Investigation\Report Creator\Historic\HistoricAnswer.cs" />
     <Compile Include="Assets\Scripts\Investigation\Report Creator\Historic\HistoricReportCreator.cs" />
     <Compile Include="Assets\Scripts\Investigation\Report Creator\Object Picker\ListedObject.cs" />
@@ -118,6 +119,8 @@
     <Compile Include="Assets\Scripts\Investigation\Report Creator\ReportCreatorScreen.cs" />
     <Compile Include="Assets\Scripts\Investigation\Report Creator\StartScreenReportCreator.cs" />
     <Compile Include="Assets\Scripts\Investigation\ReportData.cs" />
+    <Compile Include="Assets\Scripts\Investigation\ReportReaction\ReactionData.cs" />
+    <Compile Include="Assets\Scripts\Investigation\ReportReaction\ReportReaction.cs" />
     <Compile Include="Assets\Scripts\Investigation\RumorData.cs" />
     <Compile Include="Assets\Scripts\Investigation\Spot\InvestigationSpot.cs" />
     <Compile Include="Assets\Scripts\Investigation\Spot\InvestigationSpotData.cs" />

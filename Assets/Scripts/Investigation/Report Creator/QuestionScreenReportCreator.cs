@@ -20,6 +20,9 @@ public class QuestionScreenReportCreator : ReportCreatorScreen
 
     public int currentQuestion;
 
+    public delegate void ReceiveReport(List<ScriptableObject> list);
+    public event ReceiveReport receiveReport;
+
     public override void OnOpen()
     {
         historic.Initialize();
@@ -28,42 +31,46 @@ public class QuestionScreenReportCreator : ReportCreatorScreen
         base.OnOpen();
         currentQuestion = 0;
 
-        Begin();
+        UpdateQuestion();
     }
     public override void OnClose()
     {
         base.OnClose();
     }
-    public void Begin()
+    public void UpdateQuestion()
     {
         UpdatePageNumber();
+
         question.text = data.questions[currentQuestion].question;
         picker.ResetPicker();
+        firstSelected.Select();
         prevButton.interactable = currentQuestion != 0;
+
+        if (currentQuestion == data.questions.Count - 1)
+            nextButton.transform.GetChild(0).GetComponent<TMP_Text>().text = "FINALIZAR";
+        else
+            nextButton.transform.GetChild(0).GetComponent<TMP_Text>().text = "PRÓXIMA";
     }
     public void End()
     {
-        foreach(var a in historic.answers)
-        {
-            print(a.name);
-        }
+        receiveReport(historic.answers);
     }
     public void NextQuestion()
     {
         historic.AddAnswer(currentQuestion, picker.GetSelectedObject(), picker.GetSelectedType());
         currentQuestion++;
         if (currentQuestion < data.questions.Count)
-            Begin();
+            UpdateQuestion();
         else
             End();
     }
     public void PreviousQuestion()
     {
         currentQuestion = Mathf.Clamp(currentQuestion - 1, 0, data.questions.Count);
-        Begin();
+        UpdateQuestion();
     }
     public void UpdatePageNumber()
     {
-        pageNumber.text = currentQuestion + "/" + (data.questions.Count - 1);
+        pageNumber.text = (currentQuestion + 1) + "/" + data.questions.Count;
     }
 }

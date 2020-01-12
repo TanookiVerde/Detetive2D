@@ -47,7 +47,6 @@ public class CaseData : ScriptableObject
     public RumorData GetRumorData(Rumor info)
     {
         WitnessData witness = GetWitnessData(info.from);
-        Debug.Log("W:" + witness.witnessName);
         foreach (RumorData r in witness.rumors)
         {
             if (r.target == GetWitnessData(info.target))
@@ -85,5 +84,43 @@ public class CaseData : ScriptableObject
             cluesList.Add(clues[c]);
         }
         return cluesList;
+    }
+    public List<WitnessData> ListAllWitnessIn(Files files)
+    {
+        var witnessList = new List<WitnessData>();
+        foreach (var w in files.witnesses)
+        {
+            witnessList.Add(witnesses[w]);
+        }
+        return witnessList;
+    }
+    public List<InsightData> ListAllInsightIn(Files files)
+    {
+        var insightList = new List<InsightData>();
+        foreach (var i in files.insights)
+        {
+            insightList.Add(insights[i]);
+        }
+        return insightList;
+    }
+    public List<TestimonyData> ListAllTestimonyIn(Files files)
+    {
+        var testimonyList = new List<TestimonyData>();
+        foreach (var i in files.testimonys)
+        {
+            var t = GetTestimonyData(i);
+            testimonyList.Add(t);
+        }
+        return testimonyList;
+    }
+    public List<RumorData> ListAllRumorIn(Files files)
+    {
+        var rumorList = new List<RumorData>();
+        foreach (var r in files.rumors)
+        {
+            var t = GetRumorData(r);
+            rumorList.Add(t);
+        }
+        return rumorList;
     }
 }

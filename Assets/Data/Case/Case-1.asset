@@ -15,6 +15,7 @@ MonoBehaviour:
   title: Primeiro Caso
   description: "Descri\xE7\xE3o"
   location: Vila da Montanha
+  image: {fileID: 21300000, guid: c8fec7db39bc02a478b294359ff0046c, type: 3}
   initialClues:
   - {fileID: 11400000, guid: 55016fe49d7d5e04885465dbc38c3dbb, type: 2}
   witnesses:

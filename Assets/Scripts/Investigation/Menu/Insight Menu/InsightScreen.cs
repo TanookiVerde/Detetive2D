@@ -6,17 +6,19 @@ using UnityEngine.UI;
 public class InsightScreen : FilesMenuScreen
 {
     public string screenName;
-    public ClueListUI clueList;
 
-    public ClueSpaceUI firstSpace;
-    public ClueSpaceUI secondSpace;
+    [Header("UI")]
+    public ObjectLister objectLister;
+    public ObjectPicker firstSpace;
+    public ObjectPicker secondSpace;
     
     public override void OnShow()
     {
         FindObjectOfType<FilesMenu>().SetName(": " + screenName);
-        clueList.Close();
-        firstSpace.Initialize();
-        secondSpace.Initialize();
+
+        firstSpace.ResetPicker();
+        secondSpace.ResetPicker();
+
         firstSpace.GetComponent<Selectable>().Select();
         base.OnShow();
     }
@@ -28,9 +30,9 @@ public class InsightScreen : FilesMenuScreen
     {
         CaseData openedCase = InvestigationManager.GetCase();
 
-        var clue1 = firstSpace.selectedClue;
-        var clue2 = secondSpace.selectedClue;
-        foreach(InsightData i in openedCase.insights)
+        var clue1 = (ClueData) firstSpace.GetSelectedObject();
+        var clue2 = (ClueData) secondSpace.GetSelectedObject();
+        foreach (InsightData i in openedCase.insights)
         {
             if((i.firstClue == clue1 && i.secondClue == clue2) 
                 || (i.firstClue == clue2 && i.secondClue == clue1))
