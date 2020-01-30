@@ -39,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 183.8}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5538905014189990598
 CanvasRenderer:
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 177d62e9b79d9384bbd290147e3af551, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -158,6 +158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f54f732ef7b5ce4fb08b0294ea0e7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clues: 0
+  testimonys: 0
+  rumors: 0
+  witnesses: 0
+  insights: 0
   title: {fileID: 5460260230247367186}
   lister: {fileID: 0}
 --- !u!1 &6547723338640452681
@@ -225,8 +230,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Objeto
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 872f0f3c1fece904fb6c5f3b2eedd1d0, type: 2}
-  m_sharedMaterial: {fileID: 8222301784783397015, guid: 872f0f3c1fece904fb6c5f3b2eedd1d0,
+  m_fontAsset: {fileID: 11400000, guid: 7ef44a90872795545b205fbb74b777b5, type: 2}
+  m_sharedMaterial: {fileID: 1404900210565515117, guid: 7ef44a90872795545b205fbb74b777b5,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -252,8 +257,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 40.4
-  m_fontSizeBase: 40.4
+  m_fontSize: 25.9
+  m_fontSizeBase: 25.9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -269,7 +274,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 4
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -298,7 +303,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 6
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

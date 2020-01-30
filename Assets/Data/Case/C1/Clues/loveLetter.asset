@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6686caa331dd8454d8b229c59c711794, type: 3}
+  m_Name: loveLetter
+  m_EditorClassIdentifier: 
+  img: {fileID: 21300000, guid: 1db76a2f15a79f644840e487bec73cc9, type: 3}
+  clueName: Carta de Amor
+  clueDescription: '"Envio com carinho para minha amada esta caixinha de delicias.
+    \n Nos encontramos em breve."'
+  important: 0
+  findingDialog: {fileID: 11400000, guid: 5752965af4e2d2f4c96efa9657ee357e, type: 2}

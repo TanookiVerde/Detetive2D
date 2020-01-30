@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b4e8844fff64c4c8f3d70bc9f3685a, type: 3}
+  m_Name: spot_cesto_sujo
+  m_EditorClassIdentifier: 
+  background: {fileID: 21300000, guid: 70d9c1f992c4554449a6e23ad8ee4bcb, type: 3}
+  marthaData: {fileID: 11400000, guid: 7cc841a6b3fcc8a4cbc9840bbc2fc8f5, type: 2}
+  clues:
+  - position: {x: -0.125, y: 0.1}
+    clue: {fileID: 11400000, guid: afdc93c091c816b4d8e6fdc7f80f1a58, type: 2}
+    colliderSize: 0.075

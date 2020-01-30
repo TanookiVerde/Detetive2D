@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ac05752695f5040b0f37df994866c2, type: 3}
+  m_Name: c1_d_joao_intro
+  m_EditorClassIdentifier: 
+  txts: []
+  dialog:
+  - what: "Bom dia, senhor. Meu nome \xE9 Martha, sou a detetive respons\xE1vel pelo
+      incidente da senhora Nogueira. Posso fazer algumas perguntas?"
+    who: {fileID: 11400000, guid: 7cc841a6b3fcc8a4cbc9840bbc2fc8f5, type: 2}
+  - what: Bom dia... Err, sim, fique a vontade. O que eu puder fazer para ajudar...
+    who: {fileID: 11400000, guid: f2dab3103680b6e47b20bd15b8f61184, type: 2}
+  - what: "Vamos come\xE7ar pelo come\xE7o. O que voc\xEA sabe sobre o incidente?"
+    who: {fileID: 11400000, guid: 7cc841a6b3fcc8a4cbc9840bbc2fc8f5, type: 2}
+  - what: Sei pouco... Apenas que ela foi envenenada dentro de sua casa.
+    who: {fileID: 11400000, guid: f2dab3103680b6e47b20bd15b8f61184, type: 2}
+  - what: "Se me permite... H\xE1 algo que fa\xE7a voc\xEA ter certeza que foi dentro
+      da casa o envenenamento?"
+    who: {fileID: 11400000, guid: 7cc841a6b3fcc8a4cbc9840bbc2fc8f5, type: 2}
+  - what: "Bom... Na verdade n\xE3o... S\xF3 tive a impress\xE3o."
+    who: {fileID: 11400000, guid: f2dab3103680b6e47b20bd15b8f61184, type: 2}
+  - what: "Entendo. E o senhor. Qual sua rela\xE7\xE3o com a vitima?"
+    who: {fileID: 11400000, guid: 7cc841a6b3fcc8a4cbc9840bbc2fc8f5, type: 2}
+  - what: "Para falar a verdade, nenhuma. S\xF3 conhecia de vista e de bom dia. Ela
+      andava mais pela parte de cima da vila."
+    who: {fileID: 11400000, guid: f2dab3103680b6e47b20bd15b8f61184, type: 2}
+  - what: O senhor trabalha por aqui?
+    who: {fileID: 11400000, guid: 7cc841a6b3fcc8a4cbc9840bbc2fc8f5, type: 2}
+  - what: "Sim.  Eu tenho uma planta\xE7\xE3o de cogumelos no sot\xE3o e os vendo
+      por aqui."
+    who: {fileID: 11400000, guid: f2dab3103680b6e47b20bd15b8f61184, type: 2}
+  - what: "Entendo. Obrigado pelo seu tempo. Qualquer coisa volto a falar com voc\xEA."
+    who: {fileID: 11400000, guid: 7cc841a6b3fcc8a4cbc9840bbc2fc8f5, type: 2}

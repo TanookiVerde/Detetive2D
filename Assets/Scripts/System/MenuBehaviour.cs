@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuBehaviour : MonoBehaviour
+public class MenuBehaviour : InputSeeker
 {
-    public static List<MenuBehaviour> menuHierarchy = new List<MenuBehaviour>();
     public CanvasGroup canvasGroup;
     [SerializeField] private Selectable firstSelected;
 
-    public void Open()
+    public virtual void Open()
     {
-        Add(this);
+        Enter(this);
 
         canvasGroup.alpha = 1;
         canvasGroup.interactable = true;
@@ -21,38 +20,30 @@ public class MenuBehaviour : MonoBehaviour
             firstSelected.Select();
         OnOpen();
     }
-    public void Close()
+    public virtual void Close()
     {
-        Remove(this);
+        Exit();
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
         OnClose();
     }
+    public virtual void Loop() { }
     public virtual void OnOpen() { }
     public virtual void OnClose() { }
-    public void SetInteractive(bool value)
+    public override void OnBack()
     {
-        canvasGroup.interactable = value;
+        canvasGroup.interactable = true;
         if (firstSelected != null)
-        {
             firstSelected.Select();
-        }
     }
-    public static void Add(MenuBehaviour menu)
+    public override void OnLeave()
     {
-        foreach (var m in menuHierarchy)
-        {
-            m.SetInteractive(false);
-        }
-        menuHierarchy.Add(menu);
-        GlobalFlags.menuOpened = menuHierarchy.Count > 0;
+        canvasGroup.interactable = true;
     }
-    public static void Remove(MenuBehaviour menu)
+    private void Update()
     {
-        menuHierarchy.Remove(menu);
-        if(menuHierarchy.Count > 0)
-            menuHierarchy[menuHierarchy.Count - 1].SetInteractive(true);
-        GlobalFlags.menuOpened = menuHierarchy.Count > 0;
+        if (interactable)
+            Loop();
     }
 }

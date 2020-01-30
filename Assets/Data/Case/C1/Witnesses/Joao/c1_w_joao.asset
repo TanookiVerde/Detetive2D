@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec81cbaf31c1b145b6f2623a73052e5, type: 3}
+  m_Name: c1_w_joao
+  m_EditorClassIdentifier: 
+  witnessName: "Jo\xE3o Nogueira"
+  image: {fileID: 21300000, guid: a24e1a9c9de351c4ab8a8445cb68da57, type: 3}
+  age: 23
+  job: Cria cogumelos
+  introducingDialog: {fileID: 11400000, guid: 963f104ad4e29c541874bbdc4f3a8d0e, type: 2}
+  rumors: []
+  testimonys: []
+  genericNegativeAnswers:
+  - {fileID: 11400000, guid: 9f5d59cce63d28145af30bf54ba69815, type: 2}

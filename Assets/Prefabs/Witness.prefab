@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9200286579712236059}
   - component: {fileID: 193813941939225326}
   m_Layer: 0
-  m_Name: John Doe
+  m_Name: Witness
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d44afb067394b4849bf1a55d0ee85deb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 81cef37e703208543a5852b57de88530, type: 3}
+  m_Color: {r: 0.8962264, g: 0.46079564, b: 0.46079564, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,7 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 084e4099b2f65c546a79fcb4a3b9cf2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storage: {fileID: 11400000, guid: 374b82fe580fe144c9c6bea8e60777ce, type: 2}
   data: {fileID: 11400000, guid: 801b76737bdae5147bb78077077ec433, type: 2}
 --- !u!61 &193813941939225326
 BoxCollider2D:
@@ -114,7 +113,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

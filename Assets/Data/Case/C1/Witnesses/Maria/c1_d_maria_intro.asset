@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ac05752695f5040b0f37df994866c2, type: 3}
+  m_Name: c1_d_maria_intro
+  m_EditorClassIdentifier: 
+  dialog:
+  - what: "Bom dia, senhora. Sou Martha, encarregada da investiga\xE7\xE3o. Posso
+      fazer algumas perguntas?"
+    who: {fileID: 11400000, guid: 7cc841a6b3fcc8a4cbc9840bbc2fc8f5, type: 2}
+  - what: Claro, mas por favor seja breve. Tenho que ir para a escola em alguns minutos.
+    who: {fileID: 11400000, guid: a607ae5cc1c68094bab935726911bec1, type: 2}
+  - what: "A senhora \xE9 professora?"
+    who: {fileID: 11400000, guid: 7cc841a6b3fcc8a4cbc9840bbc2fc8f5, type: 2}
+  - what: "Sim. Dou aula para as crian\xE7as da vila. S\xE3o apenas quatro: Jonatan,
+      Mateus, Gabriela e Giselle."
+    who: {fileID: 11400000, guid: a607ae5cc1c68094bab935726911bec1, type: 2}
+  - what: "Entendo. Qual sua rela\xE7\xE3o com a vitima?"
+    who: {fileID: 11400000, guid: 7cc841a6b3fcc8a4cbc9840bbc2fc8f5, type: 2}
+  - what: Eu dou aula para o filho dela... Mateus. Coitado...
+    who: {fileID: 11400000, guid: a607ae5cc1c68094bab935726911bec1, type: 2}
+  - what: "O Mateus estar\xE1 na aula hoje?"
+    who: {fileID: 11400000, guid: 7cc841a6b3fcc8a4cbc9840bbc2fc8f5, type: 2}
+  - what: "N\xE3o tenho certeza. Provavelmente n\xE3o. Deve ter abalado o menino..."
+    who: {fileID: 11400000, guid: a607ae5cc1c68094bab935726911bec1, type: 2}
+  - what: Obrigado pelo seu tempo.
+    who: {fileID: 11400000, guid: 7cc841a6b3fcc8a4cbc9840bbc2fc8f5, type: 2}

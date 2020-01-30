@@ -13,16 +13,9 @@ MonoBehaviour:
   m_Name: Storage
   m_EditorClassIdentifier: 
   cases:
-  - {fileID: 11400000, guid: 91f8416228a50fa49a76a163346f2493, type: 2}
-  clues:
-  - {fileID: 11400000, guid: d1ec26095a75f254d982edfb52c40d58, type: 2}
-  - {fileID: 11400000, guid: d67acea19a396a3439776fae5ff08eb4, type: 2}
-  - {fileID: 11400000, guid: 55016fe49d7d5e04885465dbc38c3dbb, type: 2}
-  - {fileID: 11400000, guid: 84d1ce59141ffab4eb5d438a752244aa, type: 2}
-  - {fileID: 11400000, guid: c084d14ff50ff904baef8d12c322f6b1, type: 2}
-  - {fileID: 11400000, guid: d09417dbd61a70645b130d2b80fb0e88, type: 2}
-  witnesses:
-  - {fileID: 11400000, guid: 801b76737bdae5147bb78077077ec433, type: 2}
-  - {fileID: 11400000, guid: 380965503b6bf944791e40d2b76f1ed3, type: 2}
-  insights:
-  - {fileID: 11400000, guid: 730341c55ef361b43a84064399886b16, type: 2}
+  - {fileID: 11400000, guid: 83c131c18308d7c4a9dd190175532f14, type: 2}
+  spots:
+  - {fileID: 0}
+  taxiPlaces:
+  - {fileID: 11400000, guid: 1a6af69ceff12734cb763d26d3c6831f, type: 2}
+  - {fileID: 11400000, guid: bc16a73aadcb31f48829b97fa528dfa4, type: 2}
